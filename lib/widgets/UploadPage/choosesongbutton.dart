@@ -17,8 +17,8 @@ class _ChooseSongButtonState extends State<ChooseSongButton> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
-      child: Wrap(
-        direction: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             "Uploaded file: $soundFile",
@@ -42,12 +42,21 @@ class _ChooseSongButtonState extends State<ChooseSongButton> {
               backgroundColor: MSP.all(Theme.of(context).primaryColor),
             ),
             child: SizedBox(
-              width: 100,
+              width: 150,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.upload_rounded),
-                  Text("Choose file"),
+                  Icon(
+                    Icons.upload_rounded,
+                    color: Colors.black,
+                  ),
+                  Text(
+                    "Choose song file",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ],
               ),
             ),

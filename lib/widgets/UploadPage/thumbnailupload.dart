@@ -6,19 +6,23 @@ typedef MSP = MaterialStateProperty;
 class ThumbnailUpload extends StatefulWidget {
   const ThumbnailUpload({Key? key}) : super(key: key);
 
+  static String? get thumbnail {
+    return _ThumbnailUploadState.thumbnailFile;
+  }
+
   @override
   State<ThumbnailUpload> createState() => _ThumbnailUploadState();
 }
 
 class _ThumbnailUploadState extends State<ThumbnailUpload> {
-  Object? thumbnailFile;
+  static String? thumbnailFile;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
-      child: Wrap(
-        direction: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             "Uploaded file: $thumbnailFile",
@@ -35,6 +39,7 @@ class _ThumbnailUploadState extends State<ThumbnailUpload> {
               if (!file.isSinglePick) return;
 
               if (!fileName!.endsWith(".jpeg") ||
+                  !fileName.endsWith(".jpg") ||
                   !fileName.endsWith(".bmp") ||
                   !fileName.endsWith(".png") ||
                   !fileName.endsWith(".webp")) return;
@@ -46,18 +51,28 @@ class _ThumbnailUploadState extends State<ThumbnailUpload> {
             style: ButtonStyle(
               backgroundColor: MSP.all(Theme.of(context).primaryColor),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.upload_rounded),
-                Text("Choose file"),
-              ],
+            child: SizedBox(
+              width: 150,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.upload_rounded,
+                    color: Colors.black,
+                  ),
+                  Text(
+                    "Choose thumbnail",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
       ),
     );
   }
-
-  Object? get thumbnail => thumbnailFile;
 }

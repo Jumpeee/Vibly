@@ -36,7 +36,7 @@ class LibraryPage extends StatelessWidget {
           ),
           child: const Icon(
             Icons.upload,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),

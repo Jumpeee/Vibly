@@ -32,7 +32,15 @@ class TopBar extends StatelessWidget {
         Wrap(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text("Coppied to clipboard"),
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Theme.of(context).backgroundColor,
+                  ),
+                );
+              },
               highlightColor: Colors.transparent,
               icon: const Icon(
                 Icons.share_outlined,

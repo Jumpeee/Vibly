@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/SearchPage/searchbar.dart';
+import '../widgets/SearchPage/resultbox.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -15,17 +16,7 @@ class SearchPage extends StatelessWidget {
       child: Column(
         children: const [
           Searchbar(),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Recently searched",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-              ),
-            ),
-          ),
+          ResultBox(),
         ],
       ),
     );

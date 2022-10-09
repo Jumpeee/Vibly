@@ -33,7 +33,7 @@ class MusicController extends StatelessWidget {
                     icon: const Icon(
                       Icons.keyboard_double_arrow_left,
                       color: Colors.white,
-                      size: 28,
+                      size: 36,
                     ),
                   ),
                   IconButton(
@@ -41,7 +41,7 @@ class MusicController extends StatelessWidget {
                     icon: const Icon(
                       Icons.pause,
                       color: Colors.white,
-                      size: 28,
+                      size: 36,
                     ),
                   ),
                   IconButton(
@@ -49,7 +49,7 @@ class MusicController extends StatelessWidget {
                     icon: const Icon(
                       Icons.keyboard_double_arrow_right,
                       color: Colors.white,
-                      size: 28,
+                      size: 36,
                     ),
                   ),
                   IconButton(

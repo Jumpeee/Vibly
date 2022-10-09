@@ -1,7 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:vibly/models/user.dart';
 
 import 'choosesongbutton.dart';
 import './thumbnailupload.dart';
+
+import 'package:vibly/models/createsong.dart';
 
 typedef MSP = MaterialStateProperty;
 
@@ -82,10 +86,20 @@ class UploadForm extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 40),
             child: Center(
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  var newSong = CreateSong(
+                      title: titleController.text,
+                      author: User(
+                        username: authorsController.text,
+                      ),
+                      songFile: FormData(),
+                      duration: 0,
+                      cover: ThumbnailUpload.thumbnail);
+                },
                 backgroundColor: Theme.of(context).primaryColor,
                 child: const Icon(
                   Icons.check,
+                  color: Colors.black,
                 ),
               ),
             ),

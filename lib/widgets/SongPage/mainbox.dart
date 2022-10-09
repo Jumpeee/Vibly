@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MainBox extends StatelessWidget {
+class MainBox extends StatefulWidget {
   const MainBox({Key? key}) : super(key: key);
+
+  @override
+  State<MainBox> createState() => _MainBoxState();
+}
+
+class _MainBoxState extends State<MainBox> {
+  //tells if the active song is added to favourite songs list
+  bool isFavourite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +61,14 @@ class MainBox extends StatelessWidget {
                 ],
               ),
               IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.bookmark_outline,
-                  color: Color.fromARGB(255, 140, 140, 140),
+                onPressed: () {
+                  setState(() {
+                    isFavourite = !isFavourite;
+                  });
+                },
+                icon: Icon(
+                  isFavourite ? Icons.bookmark : Icons.bookmark_outline,
+                  color: const Color.fromARGB(255, 140, 140, 140),
                   size: 32,
                 ),
               ),

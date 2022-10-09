@@ -11,7 +11,7 @@ class CreateSong {
   final User author;
   final FormData songFile;
   final double duration;
-  final String cover;
+  final String? cover;
   final bool isPublic;
   //Defaults to DateTime.now()
   final DateTime? createdAt;
@@ -22,7 +22,7 @@ class CreateSong {
     required this.author,
     required this.songFile,
     required this.duration,
-    required this.cover,
+    this.cover,
     this.isPublic = true,
     this.createdAt,
   });

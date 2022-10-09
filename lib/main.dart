@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import './pages/homepage.dart';
-
 import './widgets/custompagebuilder.dart';
 
-void main() {
+void main() async {
   runApp(const App());
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
